@@ -508,6 +508,7 @@ Remove Industrial Stuff |
 Revia Race |
 Revia Race - biotech |
 Rim Contractors Arsenal	|
+RimDark 40K - Vilgrim's Heresy Power Armor |
 Rim Of Evil: Northern Frontier |
 Rim of Madness - Bones	|
 Rim of Madness - Vampires	|

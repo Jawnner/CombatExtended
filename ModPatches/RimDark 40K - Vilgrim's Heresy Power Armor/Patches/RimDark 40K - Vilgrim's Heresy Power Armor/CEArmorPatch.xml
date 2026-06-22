@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Remove Head Armor Statbases-->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="qwezxc_MkIIIHelmet" or
+			defName="qwezxc_MkIVPowerArmorHelmet" or
+			defName="qwezxc_MkVIPowerArmorHelmet"]/statBases/ArmorRating_Sharp</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="qwezxc_MkIIIHelmet" or
+			defName="qwezxc_MkIVPowerArmorHelmet" or
+			defName="qwezxc_MkVIPowerArmorHelmet"]/statBases/ArmorRating_Blunt</xpath>
+	</Operation>
+
+
+	<!-- Remove Body Armor Statbases-->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="qwezxc_MkIIIPowerArmor" or
+            defName="qwezxc_MkIVPowerArmor" or
+			defName="qwezxc_MkVIPowerArmor"]/statBases/ArmorRating_Sharp</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="qwezxc_MkIIIPowerArmor" or
+            defName="qwezxc_MkIVPowerArmor" or
+			defName="qwezxc_MkVIPowerArmor"]/statBases/ArmorRating_Blunt</xpath>
+	</Operation>
+
+    <!-- ===== MkIII Helmet ====== -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIHelmet"]/statBases/Mass</xpath>
+		<value>
+			<Mass>25</Mass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIHelmet"]/statBases</xpath>
+		<value>
+			<Bulk>15</Bulk>
+			<WornBulk>5</WornBulk>
+            <NightVisionEfficiency_Apparel>0.6</NightVisionEfficiency_Apparel>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIHelmet"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>40</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIHelmet"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>45</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIHelmet"]/apparel/immuneToToxGasExposure</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIHelmet"]/apparel</xpath>
+			<value>
+				<immuneToToxGasExposure>true</immuneToToxGasExposure>
+			</value>
+		</nomatch>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIHelmet"]</xpath>
+		<value>
+			<li Class="CombatExtended.ApparelDefExtension">
+				<isRadioPack>true</isRadioPack>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIHelmet"]/equippedStatOffsets</xpath>
+		<value>
+			<AimingAccuracy>0.2</AimingAccuracy>
+			<SmokeSensitivity>-1</SmokeSensitivity>
+		</value>
+	</Operation>
+
+	<!-- ===== MkIII Power Armor ====== -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIPowerArmor"]/statBases/Mass</xpath>
+		<value>
+			<Mass>400</Mass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIPowerArmor"]/statBases</xpath>
+		<value>
+			<Bulk>350</Bulk>
+			<WornBulk>50</WornBulk>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIPowerArmor"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>45</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIPowerArmor"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>425</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIIIPowerArmor"]/equippedStatOffsets</xpath>
+		<value>
+			<CarryWeight>125</CarryWeight>
+			<CarryBulk>75</CarryBulk>
+            <Suppressability>-0.25</Suppressability>
+		</value>
+	</Operation>
+
+
+    <!-- ===== MkIV Helmet ====== -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIVHelmet"]/statBases/Mass</xpath>
+		<value>
+			<Mass>15</Mass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIVHelmet"]/statBases</xpath>
+		<value>
+			<Bulk>15</Bulk>
+			<WornBulk>5</WornBulk>
+            <NightVisionEfficiency_Apparel>0.6</NightVisionEfficiency_Apparel>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIVHelmet"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>30</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIVHelmet"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>35</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIVHelmet"]/apparel/immuneToToxGasExposure</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@Name="qwezxc_MkIVHelmet"]/apparel</xpath>
+			<value>
+				<immuneToToxGasExposure>true</immuneToToxGasExposure>
+			</value>
+		</nomatch>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIVHelmet"]</xpath>
+		<value>
+			<li Class="CombatExtended.ApparelDefExtension">
+				<isRadioPack>true</isRadioPack>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIVHelmet"]/equippedStatOffsets</xpath>
+		<value>
+			<AimingAccuracy>0.2</AimingAccuracy>
+			<SmokeSensitivity>-1</SmokeSensitivity>
+		</value>
+	</Operation>
+
+	<!-- ===== MkIV Power Armor ====== -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIVPowerArmor"]/statBases/Mass</xpath>
+		<value>
+			<Mass>300</Mass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIVPowerArmor"]/statBases</xpath>
+		<value>
+			<Bulk>200</Bulk>
+			<WornBulk>25</WornBulk>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIVPowerArmor"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>36</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIVPowerArmor"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>350</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkIVPowerArmor"]/equippedStatOffsets</xpath>
+		<value>
+			<CarryWeight>100</CarryWeight>
+			<CarryBulk>50</CarryBulk>
+		</value>
+	</Operation>
+
+
+    <!-- ===== MkVI Helmet ====== -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkVIHelmet"]/statBases/Mass</xpath>
+		<value>
+			<Mass>12</Mass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkVIHelmet"]/statBases</xpath>
+		<value>
+			<Bulk>15</Bulk>
+			<WornBulk>5</WornBulk>
+            <NightVisionEfficiency_Apparel>0.75</NightVisionEfficiency_Apparel>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkVIHelmet"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>30</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkVIHelmet"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>35</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkVIHelmet"]/apparel/immuneToToxGasExposure</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@Name="qwezxc_MkVIHelmet"]/apparel</xpath>
+			<value>
+				<immuneToToxGasExposure>true</immuneToToxGasExposure>
+			</value>
+		</nomatch>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkVIHelmet"]</xpath>
+		<value>
+			<li Class="CombatExtended.ApparelDefExtension">
+				<isRadioPack>true</isRadioPack>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkVIHelmet"]/equippedStatOffsets</xpath>
+		<value>
+			<AimingAccuracy>0.3</AimingAccuracy>
+			<SmokeSensitivity>-1</SmokeSensitivity>
+		</value>
+	</Operation>
+
+	<!-- ===== MkVI Power Armor ====== -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkVIPowerArmor"]/statBases/Mass</xpath>
+		<value>
+			<Mass>275</Mass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkVIPowerArmor"]/statBases</xpath>
+		<value>
+			<Bulk>200</Bulk>
+			<WornBulk>25</WornBulk>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkVIPowerArmor"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>32</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkVIPowerArmor"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>320</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="qwezxc_MkVIPowerArmor"]/equippedStatOffsets</xpath>
+		<value>
+			<CarryWeight>100</CarryWeight>
+			<CarryBulk>50</CarryBulk>
+            <HuntingStealth>0.25</HuntingStealth>
+			<PawnTrapSpringChance>0.75</PawnTrapSpringChance>
+		</value>
+	</Operation>
+</Patch>
